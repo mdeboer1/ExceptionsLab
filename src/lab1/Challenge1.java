@@ -28,6 +28,9 @@ public class Challenge1 {
     }
     
     public String extractLastName(String fullName) {
+        while (fullName == null || fullName.isEmpty()){
+            fullName = JOptionPane.showInputDialog("Please, renter full name (use Format: first last):");
+        }
         
         String[] nameParts = fullName.split(" ");
         return nameParts[nameParts.length - 1];
