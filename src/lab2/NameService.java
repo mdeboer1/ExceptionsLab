@@ -18,10 +18,12 @@ public class NameService {
      * @param fullName - a name containing a first name and a last name
      * @return the last name
      */
-    public String extractLastName(String fullName) {
-        
+    public String extractLastName(String fullName) throws NullPointerException{
+        if (fullName == null || fullName.isEmpty()){
+            throw new NullPointerException();
+        }
         String[] nameParts = fullName.split(" ");
-        return nameParts[nameParts.length - 1];
+        return nameParts[nameParts.length - LAST_NAME_IDX];
     }
     
     /**
@@ -31,7 +33,11 @@ public class NameService {
      * @param fullName - a name containing a first name and a last name
      * @return the first name
      */
-    public String extractFirstName(String fullName) {
+    public String extractFirstName(String fullName) throws NullPointerException{
+        if (fullName == null || fullName.isEmpty()){
+            throw new NullPointerException();
+        }
+        System.out.println(fullName);
         String[] nameParts = fullName.split(" ");
         return nameParts[FIRST_NAME_IDX];
     }
