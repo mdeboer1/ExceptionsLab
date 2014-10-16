@@ -33,7 +33,6 @@ public class Challenge1 {
         }
         
         String[] nameParts = fullName.split(" ");
-        return nameParts[nameParts.length - 1];
+        return nameParts[nameParts.length - LAST_NAME_IDX];
     }
-
 }
