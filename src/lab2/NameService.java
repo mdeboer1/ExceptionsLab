@@ -37,7 +37,6 @@ public class NameService {
         if (fullName == null || fullName.isEmpty()){
             throw new NullPointerException();
         }
-        System.out.println(fullName);
         String[] nameParts = fullName.split(" ");
         return nameParts[FIRST_NAME_IDX];
     }
