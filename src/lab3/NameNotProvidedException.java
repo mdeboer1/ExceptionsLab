@@ -9,7 +9,7 @@ package lab3;
  *
  * @author mdeboer1
  */
-public class NameNotProvidedException extends ArrayIndexOutOfBoundsException {
+public class NameNotProvidedException extends IllegalArgumentException {
     private static String message = "You must provide a first and last name!";
 
     public NameNotProvidedException() {

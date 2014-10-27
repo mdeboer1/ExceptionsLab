@@ -19,6 +19,9 @@ public class NameService {
      * @return the last name
      */
     public String extractLastName(String fullName) throws NameNotProvidedException{
+        if (fullName == null){
+            throw new NameNotProvidedException();
+        }
         String[] nameParts;
         String answer = null;
         try{
