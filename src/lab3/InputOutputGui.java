@@ -21,7 +21,6 @@ public class InputOutputGui {
         String lastName = nameService.extractLastName(fullName);
         String msg = "Your last name is: " + lastName;
         JOptionPane.showMessageDialog(null, msg);
-        
     }
      
 }

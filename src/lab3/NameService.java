@@ -22,10 +22,11 @@ public class NameService {
         String[] nameParts;
         String answer = null;
         try{
+            
             nameParts = fullName.split(" ");
             answer = nameParts[LAST_NAME_IDX];
-        } catch (NameNotProvidedException exc){
-            exc.getMessage();
+        } catch (ArrayIndexOutOfBoundsException exc){ //Catch the actual exception type
+            throw new NameNotProvidedException(); // Throw my class exception
         }
         return answer;
     }
