@@ -10,7 +10,7 @@ package lab3;
 public class NameService {
     private static final int FIRST_NAME_IDX = 0;
     private static final int LAST_NAME_IDX = 1;
-    
+
     /**
      * Finds and returns the last name from within a full name. Caution: 
      * No validation is performed.
@@ -18,9 +18,16 @@ public class NameService {
      * @param fullName - a name containing a first name and a last name
      * @return the last name
      */
-    public String extractLastName(String fullName) {
-        String[] nameParts = fullName.split(" ");
-        return nameParts[LAST_NAME_IDX];
+    public String extractLastName(String fullName) throws NameNotProvidedException{
+        String[] nameParts;
+        String answer = null;
+        try{
+            nameParts = fullName.split(" ");
+            answer = nameParts[LAST_NAME_IDX];
+        } catch (NameNotProvidedException exc){
+            exc.getMessage();
+        }
+        return answer;
     }
     
     /**
@@ -30,7 +37,7 @@ public class NameService {
      * @param fullName - a name containing a first name and a last name
      * @return the first name
      */
-    public String extractFirstName(String fullName) {
+    public String extractFirstName(String fullName) throws NameNotProvidedException{
         String[] nameParts = fullName.split(" ");
         return nameParts[FIRST_NAME_IDX];
     }
