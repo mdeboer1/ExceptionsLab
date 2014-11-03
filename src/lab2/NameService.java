@@ -17,12 +17,16 @@ public class NameService {
      * 
      * @param fullName - a name containing a first name and a last name
      * @return the last name
+     * @throws IllegalArgumentException
      */
-    public String extractLastName(String fullName) throws NullPointerException{
+    public String extractLastName(String fullName) throws IllegalArgumentException{
         if (fullName == null || fullName.isEmpty()){
-            throw new NullPointerException();
+            throw new IllegalArgumentException("Full name cannot be null or empty!");
         }
         String[] nameParts = fullName.split(" ");
+        if (nameParts.length > 2 || nameParts.length < 2){
+            throw new IllegalArgumentException("Sorry, only first and last name allowed!");
+        }
         return nameParts[nameParts.length - LAST_NAME_IDX];
     }
     
