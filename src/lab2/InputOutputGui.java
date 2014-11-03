@@ -16,18 +16,19 @@ public class InputOutputGui {
     }
 
     public void startConversation() {
-        
-        String fullName = JOptionPane.showInputDialog("Enter full name:");
+        boolean isError = false;
         String lastName = "";
+        do {
+        String fullName = JOptionPane.showInputDialog("Enter full name:");
         try{
             lastName = nameService.extractLastName(fullName);
+            isError = true;
         } catch (IllegalArgumentException ia){
             JOptionPane.showMessageDialog(null, ia.getMessage());
-            return;
+            isError = true;
         }
+        } while (isError);
         String msg = "Your last name is: " + lastName;
         JOptionPane.showMessageDialog(null, msg);
-        
     }
-     
 }
