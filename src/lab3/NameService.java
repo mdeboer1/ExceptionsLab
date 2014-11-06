@@ -27,6 +27,10 @@ public class NameService {
         try{
             
             nameParts = fullName.split(" ");
+            // Check to see if more that first and last name were given
+            if (nameParts.length > 2){
+                //Throw new error here, create a different custom class
+            }
             answer = nameParts[LAST_NAME_IDX];
         } catch (ArrayIndexOutOfBoundsException exc){ //Catch the actual exception type
             throw new NameNotProvidedException(); // Throw my class exception
